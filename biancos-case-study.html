@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bianco's Pizzeria — UX Case Study</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#18140f;--mid:#4a3f35;--muted:#9a8c80;
+  --rule:#e0d6cc;--cream:#f8f4ef;--paper:#ffffff;
+  --red:#b83225;--red-dim:#f0e0de;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);font-size:15px;line-height:1.65}
+
+/* HERO */
+.hero{background:var(--ink);padding:88px 56px 72px;position:relative;overflow:hidden}
+.hero-grain{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;opacity:.6}
+.hero-tag{font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:22px}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5.5vw,62px);font-weight:600;line-height:1.08;color:#f0ebe4;max-width:740px;margin-bottom:20px}
+.hero h1 em{font-style:italic;font-weight:400;color:#b8a898}
+.hero-intro{font-size:15px;color:#8c7d70;max-width:500px;margin-bottom:48px}
+.meta-row{display:flex;flex-wrap:wrap;gap:36px;padding-top:28px;border-top:1px solid rgba(255,255,255,.08)}
+.meta-item{display:flex;flex-direction:column;gap:3px}
+.meta-label{font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#5a4f45}
+.meta-val{font-size:13px;color:#c4b8aa}
+
+/* LAYOUT */
+.wrap{max-width:780px;margin:0 auto;padding:0 40px}
+.chapter{padding:60px 0 48px;border-bottom:1px solid var(--rule)}
+.chapter:last-of-type{border-bottom:none}
+.ch-label{font-size:9px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(23px,3.5vw,32px);font-weight:600;line-height:1.15;color:var(--ink);margin-bottom:14px}
+h2 em{font-style:italic;font-weight:400}
+p{color:var(--mid);font-size:15px;margin-bottom:14px}
+p:last-child{margin-bottom:0}
+strong{color:var(--ink);font-weight:500}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:28px 0;border-radius:3px;overflow:hidden}
+.stat{background:var(--paper);padding:20px 18px}
+.stat-n{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;line-height:1;color:var(--ink);margin-bottom:4px}
+.stat-n.red{color:var(--red)}
+.stat-l{font-size:11px;color:var(--muted);line-height:1.4}
+
+/* IMAGES */
+.img-block{margin:24px 0;border:1px solid var(--rule);border-radius:3px;overflow:hidden;background:var(--paper)}
+.img-block img{width:100%;display:block}
+.img-cap{padding:10px 16px;font-size:12px;color:var(--muted);border-top:1px solid var(--rule);line-height:1.5}
+.img-cap strong{color:var(--mid);font-weight:500}
+.img-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0}
+
+/* QUOTES */
+.quotes{display:flex;flex-direction:column;gap:10px;margin:24px 0}
+.quote-card{display:grid;grid-template-columns:30px 1fr;gap:14px;align-items:start;background:var(--paper);border:1px solid var(--rule);border-radius:3px;padding:18px}
+.q-av{width:30px;height:30px;border-radius:50%;background:var(--cream);border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:var(--mid);flex-shrink:0;margin-top:2px}
+.q-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;line-height:1.5;color:var(--ink);margin-bottom:4px}
+.q-by{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+/* CALLOUTS */
+.callout{border-left:2px solid var(--red);padding:16px 20px;background:var(--red-dim);border-radius:0 3px 3px 0;margin:24px 0}
+.callout.amber{background:#fdf3e3;border-left-color:#c07a00}
+.callout-tag{font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:5px}
+.callout.amber .callout-tag{color:#c07a00}
+.callout p{font-size:14px;color:#6b3228;margin:0}
+.callout.amber p{color:#6b4500}
+
+/* TABLES */
+.ba-table,.r-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:13.5px}
+.ba-table th,.r-table th{text-align:left;padding:10px 16px;font-size:9px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);background:var(--cream);border-bottom:1px solid var(--rule)}
+.ba-table td{padding:12px 16px;border-bottom:1px solid var(--cream);vertical-align:top;color:var(--mid)}
+.ba-table tr:last-child td{border-bottom:none}
+.ba-table td:first-child{color:var(--ink);font-weight:500;background:#faf7f3}
+.ba-table td:last-child{background:var(--paper)}
+.r-table td{padding:11px 16px;border-bottom:1px solid var(--cream);color:var(--mid);background:var(--paper)}
+.r-table tr:last-child td{border-bottom:none}
+.r-table td:first-child{color:var(--ink);font-weight:500}
+.pill{display:inline-block;font-size:10px;font-weight:500;padding:2px 8px;border-radius:20px}
+.pill.up{background:#d4edda;color:#1e5c38}
+.pill.warn{background:#fff3cd;color:#7a5c00}
+
+footer{text-align:center;padding:48px 40px;background:var(--ink);font-size:12px;color:#4a3f35}
+
+/* FADE IN */
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.hero-tag{animation:fadeUp .5s ease both}
+.hero h1{animation:fadeUp .5s .1s ease both}
+.hero-intro{animation:fadeUp .5s .2s ease both}
+.meta-row{animation:fadeUp .5s .3s ease both}
+
+@media(max-width:600px){
+  .hero{padding:60px 24px 48px}
+  .wrap{padding:0 20px}
+  .stats{grid-template-columns:1fr 1fr}
+  .img-row{grid-template-columns:1fr}
+  .chapter{padding:48px 0 36px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-grain"></div>
+  <div class="hero-tag">UX Research · Conversion Design · Analytics</div>
+  <h1>Why only 1 in 3 orders were placed online — <em>and what I did about it.</em></h1>
+  <p class="hero-intro">Bianco's Pizzeria had loyal customers, strong Google traffic, and a website quietly routing people away from ordering. This is the process of finding out why, fixing it, and measuring what changed.</p>
+  <div class="meta-row">
+    <div class="meta-item"><span class="meta-label">Client</span><span class="meta-val">Bianco's Pizzeria, Walpole MA</span></div>
+    <div class="meta-item"><span class="meta-label">Role</span><span class="meta-val">Freelance UX Designer &amp; Researcher</span></div>
+    <div class="meta-item"><span class="meta-label">Tools</span><span class="meta-val">Hotjar · Microsoft Clarity · Tilda CMS</span></div>
+    <div class="meta-item"><span class="meta-label">Status</span><span class="meta-val">Ongoing — Phase 2</span></div>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+<!-- 01 CONTEXT -->
+<div class="chapter">
+  <div class="ch-label">01 — Context</div>
+  <h2>The brief</h2>
+  <p>Bianco's is an independent, woman-owned thin-crust pizzeria that has served Walpole for decades. They have a loyal customer base, their own delivery drivers — a deliberate choice to avoid Uber Eats and protect staff livelihoods — and a website that wasn't doing its job. Only about a third of orders were coming in online; the rest by phone. My job was to find the friction, remove it, and build the measurement foundation to keep improving.</p>
+</div>
+
+<!-- 02 ANALYTICS -->
+<div class="chapter">
+  <div class="ch-label">02 — Analytics</div>
+  <h2>What the data showed before I touched anything</h2>
+  <p>Hotjar and Microsoft Clarity ran in parallel on the legacy site for 30 days at 100% capture. A few numbers told the story quickly.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-n">75%</div><div class="stat-l">of all sessions on mobile</div></div>
+    <div class="stat"><div class="stat-n">87%</div><div class="stat-l">new users — no prior brand relationship</div></div>
+    <div class="stat"><div class="stat-n red">21%</div><div class="stat-l">of all taps on "OUR MENU" — the dead-end path</div></div>
+    <div class="stat"><div class="stat-n red">#3</div><div class="stat-l">"ORDER NOW" ranked third, behind the wrong button</div></div>
+  </div>
+
+  <div class="img-row">
+    <div class="img-block" style="margin:0">
+      <img src="hotspots2__08072025.png" alt="Legacy homepage heatmap">
+      <div class="img-cap"><strong>Legacy heatmap.</strong> "OUR MENU" at 21% of taps. "ORDER NOW" a distant third.</div>
+    </div>
+    <div class="img-block" style="margin:0">
+      <img src="all_sessions_08072025.png" alt="Legacy all sessions overview">
+      <div class="img-cap"><strong>Legacy sessions.</strong> Surface numbers look acceptable. Per-segment data tells a different story.</div>
+    </div>
+  </div>
+
+  <p>Clarity session recordings sharpened the picture further. Users tapped "OUR MENU" expecting to get closer to ordering and landed on a long text-only list with no photos, no path forward, and item headers underlined like links that did nothing when tapped. Recordings showed repeated back-and-forth navigation. The phone number wasn't tappable. The address wasn't tappable. Contact info sat below the fold for a user base that was 87% new.</p>
+</div>
+
+<!-- 03 USER RESEARCH -->
+<div class="chapter">
+  <div class="ch-label">03 — User Research</div>
+  <h2>Three participants. One finding none of them were asked about.</h2>
+  <p>An unmoderated study with three participants via Hotjar — two scenarios each: browse naturally, then attempt a specific order. The sessions confirmed the analytics patterns and surfaced one finding I hadn't fully weighted going in.</p>
+
+  <div class="quotes">
+    <div class="quote-card">
+      <div class="q-av">S</div>
+      <div>
+        <div class="q-text">"OOOHH PICTURES. Definitely makes me want to buy more."</div>
+        <div class="q-by">Shosh — excited by homepage photos, then visibly deflated when the menu had none</div>
+      </div>
+    </div>
+    <div class="quote-card">
+      <div class="q-av">A</div>
+      <div>
+        <div class="q-text">"When I was browsing the menu, I just saw a ton of text — with food, I usually expect to see an image."</div>
+        <div class="q-by">Abby — also asked for item ratings and "highly ordered today" signals</div>
+      </div>
+    </div>
+    <div class="quote-card">
+      <div class="q-av">W</div>
+      <div>
+        <div class="q-text">"The Order Now button could be next to the menu so I can order right as I'm looking at it."</div>
+        <div class="q-by">Wilson — independently identified the missing persistent CTA while browsing the menu</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-tag">Convergence finding</div>
+    <p>All three cited missing food photography without prompting — three strangers, no leading questions, the same observation. When that happens it stops being an assumption and becomes a confirmed finding. It's the strongest single insight in the project.</p>
+  </div>
+
+  <p>Shosh also uncovered a bug on the Speedline ordering platform — not on the Bianco's site — where switching from delivery to pickup wiped all previously entered address data. Documented and flagged to the owner. The website can clear the path to ordering, but a broken handoff still kills the conversion.</p>
+
+  <div class="img-block">
+    <img src="Speedline_Legacy.png" alt="Speedline ordering platform">
+    <div class="img-cap"><strong>Speedline — the ordering platform.</strong> Grey placeholders where food photos should be. No visual hierarchy, no social proof. A second layer of friction outside direct control.</div>
+  </div>
+</div>
+
+<!-- 04 DESIGN DECISIONS -->
+<div class="chapter">
+  <div class="ch-label">04 — Design Decisions</div>
+  <h2>Every change is traceable to a data point or a research observation.</h2>
+  <p>Not a visual refresh — targeted interventions within the existing Tilda CMS. No rebuild, just friction removal.</p>
+
+  <div class="img-block">
+    <img src="Legacy_vs_implemented_changes_0106_226.png" alt="Legacy vs January 2026 redesign">
+    <div class="img-cap"><strong>Legacy → January 2026 redesign, mobile.</strong> Single CTA above the fold, business info surfaced immediately, named specials replacing anonymous images, CTA repeated mid-page.</div>
+  </div>
+
+  <table class="ba-table">
+    <thead><tr><th>What changed</th><th>The evidence behind it</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>"OUR MENU" + "ORDER NOW" → single "Start Order"</td>
+        <td>Heatmap: wrong button winning at 21% of taps. "Start Order" implies browsing, not immediate commitment — lower barrier than "Order Now".</td>
+      </tr>
+      <tr>
+        <td>Phone number → tappable click-to-call</td>
+        <td>Clarity recordings: users tapping the number expecting a native dialer. Nothing opened.</td>
+      </tr>
+      <tr>
+        <td>Anonymous image grid → named, clickable specials</td>
+        <td>Image grid had 0.31% tap rate — not perceived as interactive. All three user study participants wanted to see food before committing.</td>
+      </tr>
+      <tr>
+        <td>Business info → above the fold</td>
+        <td>87% of users were new. Location, phone, and delivery area need to be visible within seconds.</td>
+      </tr>
+      <tr>
+        <td>Single CTA → CTA repeated mid-page</td>
+        <td>Users who scrolled past the hero had no second chance without scrolling back up.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 05 RESULTS -->
+<div class="chapter">
+  <div class="ch-label">05 — Results</div>
+  <h2>The signals that matter are moving. <em>One gap remains.</em></h2>
+  <p style="font-size:12px;color:var(--muted);margin-bottom:20px;">⚠ Hotjar moved to free tier post-redesign — 35% traffic sampling. Session counts reflect that. Behavioural ratios remain valid. Clarity runs in parallel at 100% capture.</p>
+
+  <div class="img-row">
+    <div class="img-block" style="margin:0">
+      <img src="new_vs_returning_03_04_26.png" alt="New vs returning post-redesign">
+      <div class="img-cap">Returning users: <strong>13.1% → 29.6%.</strong> The clearest positive signal available.</div>
+    </div>
+    <div class="img-block" style="margin:0">
+      <img src="page_overview_03_04_26.png" alt="Homepage overview post-redesign">
+      <div class="img-cap">682 sessions · 2,200 clicks · <strong>0 rage clicks.</strong> The friction that generated frustrated tapping is gone.</div>
+    </div>
+  </div>
+
+  <table class="r-table">
+    <thead><tr><th>Metric</th><th>Legacy Aug 2025</th><th>Post-Redesign Jan–Mar 2026</th><th></th></tr></thead>
+    <tbody>
+      <tr><td>Returning users</td><td>13.1%</td><td>29.6%</td><td><span class="pill up">↑ Significant</span></td></tr>
+      <tr><td>Avg session duration</td><td>5:45</td><td>6:03</td><td><span class="pill up">↑ Positive</span></td></tr>
+      <tr><td>Rage clicks</td><td>2</td><td>0</td><td><span class="pill up">↑ Positive</span></td></tr>
+      <tr><td>Bounce rate</td><td>27.3%</td><td>41.7%</td><td><span class="pill warn">Likely artifact</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <div class="callout-tag">On the bounce rate</div>
+    <p>The rise from 27.3% to 41.7% is most likely a measurement artifact. In the legacy site, clicking into the static menu created a second pageview — artificially lowering the reported bounce rate. Now a successful session (land → tap Start Order → go order) reads as a single-page bounce. The number going up may mean the site is working better, not worse.</p>
+  </div>
+
+  <div class="callout amber">
+    <div class="callout-tag">Outstanding — highest priority</div>
+    <p>"Menu" is still the #1 clicked element at 622 sessions post-redesign and still routes to the static dead-end page. The redirect to Speedline is the next action. Until it ships, a large share of engaged users are still hitting a wall.</p>
+  </div>
+
+  <p style="margin-top:18px;">The fundamental constraint throughout: Hotjar and Clarity stop recording the moment a user leaves for Speedline. The most important event — did this visit result in an order — is invisible. Every metric above is a proxy. A Speedline UTM inquiry is pending; if passthrough is supported it creates a partial conversion bridge.</p>
+</div>
+
+<!-- 06 WHAT'S NEXT -->
+<div class="chapter">
+  <div class="ch-label">06 — What's Next</div>
+  <h2>The tactical work is done. <em>The strategic work is just starting.</em></h2>
+  <p>The immediate friction has been removed, but the engagement scope is broader than a redesign. The menu redirect to Speedline needs to ship. Start Order needs to be configured as a conversion event. A 30-day clean baseline needs to be pulled post-redirect before any further changes are made.</p>
+  <p>Beyond the technical: Bianco's has a brand story that hasn't been told yet. Long-tenured kitchen staff. Their own delivery drivers. A deliberate decision not to join Uber Eats — made to protect their people, not their margins. That story is genuinely interesting and will resonate with a community-minded local audience. The outstanding work includes developing a content direction for social media rooted in that narrative, a marketing calendar tied to holidays and local moments, and SEO groundwork — Google Business Profile, Yelp consistency, local search keywords. A user test of the current post-redesign experience and a site map documenting current and proposed structure are also planned. None of this is scope creep. It's the difference between fixing a website and actually growing the business.</p>
+</div>
+
+<!-- 07 REFLECTION -->
+<div class="chapter">
+  <div class="ch-label">07 — Reflection</div>
+  <h2>What this project is <em>actually</em> about.</h2>
+  <p>This wasn't solved with design alone. It required learning a new CMS under pressure, navigating a third-party platform I couldn't modify, building a measurement framework with free tools, and making confident decisions with incomplete data. The Speedline tracking gap is unresolved. The menu redirect hasn't shipped. A case study that hides those things isn't a case study — it's a highlight reel. The skill is visible in how you navigate constraints, not in pretending they didn't exist.</p>
+  <p>AI tools were part of the workflow throughout. Claude was used to synthesise research notes, pressure-test interpretations, and maintain a living project document as the engagement evolved. Stitch accelerated early visual exploration. The point wasn't to offload thinking — it was to spend more time on the decisions that actually required judgment and less time on the work that didn't.</p>
+</div>
+
+</div>
+</main>
+
+<footer>Bianco's Pizzeria · UX Case Study · Walpole, Massachusetts · Ongoing</footer>
+
+</body>
+</html>
