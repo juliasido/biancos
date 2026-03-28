@@ -23,8 +23,8 @@
   --amber-dim:#fdf3e3;
 }
 
-html{scroll-behavior:smooth}
-body{font-family:'Libre Baskerville',serif;background:var(--ivory);color:var(--charcoal-mid);font-size:15px;line-height:1.75}
+html{scroll-behavior:smooth;overflow-x:hidden;scrollbar-gutter:stable}
+body{font-family:'Libre Baskerville',serif;background:var(--ivory);color:var(--charcoal-mid);font-size:15px;line-height:1.75;overflow-x:hidden}
 
 /* ── Nav ── */
 .site-nav{background:var(--charcoal);padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:52px;position:sticky;top:0;z-index:100}
@@ -200,6 +200,64 @@ h1{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;color:var
   .shift-grid{grid-template-columns:1fr}
   .phase-grid{grid-template-columns:1fr}
   .site-nav{padding:0 20px}
+
+  /* Larger base font on mobile */
+  body{font-size:16px}
+
+  /* Headings */
+  h1{font-size:36px}
+  .body-section h2{font-size:22px}
+  .body-section h3{font-size:15px}
+
+  /* Lede and body copy */
+  .lede{font-size:18px}
+  .body-section p{font-size:16px;line-height:1.8}
+
+  /* Nav and labels */
+  .section-anchor{font-size:13px}
+  .meta-label,.meta-value{font-size:15px}
+  .glance-title{font-size:13px}
+  .glance-body{font-size:15px}
+  .glance-num{font-size:26px}
+
+  /* Cards and tables */
+  .stat-cell-label,.stat-cell-desc{font-size:13px}
+  .stat-cell-number{font-size:28px}
+  .shift-label{font-size:15px}
+  .shift-note{font-size:13px}
+  .shift-before{font-size:20px}
+  .shift-after{font-size:28px}
+  .ba-table td,.r-table td,.ba-table th,.r-table th{font-size:15px}
+  .note-block{font-size:15px}
+  .note-label{font-size:13px}
+  .panel-label{font-size:13px}
+  .snapshot-panel p{font-size:15px}
+  .panel-number{font-size:44px}
+
+  /* Flow paths */
+  .flow-step{font-size:14px}
+  .flow-note{font-size:13px}
+
+  /* Quotes */
+  .q-text{font-size:16px}
+  .q-by{font-size:13px}
+
+  /* Phase grid */
+  .phase-list{font-size:15px}
+  .phase-title{font-size:15px}
+  .phase-status{font-size:13px}
+
+  /* Pullquote */
+  .pullquote p{font-size:16px}
+
+  /* Image captions */
+  .img-cap{font-size:14px}
+
+  /* AI note */
+  .ai-note{font-size:15px}
+
+  /* Anchor pills */
+  .anchor-pill{font-size:15px;padding:8px 16px}
 }
 </style>
 </head>
@@ -240,6 +298,7 @@ h1{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;color:var
       <span class="panel-label">Impact</span>
       <span class="panel-number">2×</span>
       <p>More visits ending with a click to the ordering platform. Before: 1 in 4. After: nearly 1 in 2.</p>
+      <p style="margin-top:10px;padding-top:10px;border-top:1px solid var(--teal-mid)">Before the redesign, <strong>57% of ordering CTA taps went to a dead end</strong>. After: zero. Every tap on an ordering button now reaches Speedline.</p>
     </div>
     <div class="snapshot-panel">
       <span class="panel-label">Problem</span>
@@ -279,14 +338,14 @@ h1{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;color:var
         <span class="glance-num">2</span>
         <div>
           <div class="glance-title">The decision</div>
-          <div class="glance-body">Two equal CTAs were replaced with one. <strong>The static menu page, the primary dead end, was redirected to Speedline.</strong> Both paths now lead to ordering.</div>
+          <div class="glance-body">Two equal CTAs were replaced with one. <strong>The static menu page, the primary dead end, was redirected to Speedline.</strong> Both paths now lead to ordering. Users who had been hitting a wall were picked up and placed directly into the ordering flow.</div>
         </div>
       </div>
       <div class="glance-item">
         <span class="glance-num">3</span>
         <div>
           <div class="glance-title">What the data showed</div>
-          <div class="glance-body">Visits ending with a click to the ordering platform went from 25% to 41.5%. Order button taps went from 11.3% to 33.3% of all taps. No platform rebuild. Copy, hierarchy, and redirect only.</div>
+          <div class="glance-body">Visits ending with a click to the ordering platform went from 25% to 41.5%. Order button taps went from 11.3% to 33.3% of all taps. The share of CTA taps hitting a dead end dropped from 57% to zero. No platform rebuild. Copy, hierarchy, and redirect only.</div>
         </div>
       </div>
     </div>
@@ -465,6 +524,15 @@ h1{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;color:var
         <div class="flow-note">Most taps went into the menu path. That path had no exit to ordering.</div>
       </div>
     </div>
+
+    <p>The approach followed the user. 69% of hamburger-first sessions ended at the menu tap — not because users were lost, but because they wanted to see what was on offer before committing. That is a reasonable, predictable behavior. The problem was where it led. Rather than redesigning the menu from scratch, the decision was to redirect that intent: anyone tapping Menu now lands on Speedline, which serves as both a browsable menu and an ordering system. Users who had been walking into a wall were picked up and placed directly into the flow they were looking for.</p>
+
+    <div class="note-block">
+      <div class="note-label">Why not a richer menu on the site?</div>
+      The obvious answer would be a visual menu page with food photos linking item-by-item to Speedline. Two constraints ruled it out. First, Speedline does not expose individual item-level URLs — only category-level links (e.g. calzones, salads). Second, the business cannot maintain two separate menus in parallel. Any solution that requires keeping a website menu in sync with the ordering platform adds overhead the owner cannot absorb. The redirect is the highest-leverage option within the actual constraints of the system.
+    </div>
+
+    <p>A consistent signal across both periods: roughly 1 in 5 mobile visitors navigates to the menu via the hamburger nav, regardless of what else changes on the page. That segment is not going away. It is a user need to serve better over time, not a problem to eliminate. Upcoming tests are designed with this in mind.</p>
   </div>
 
 
@@ -512,8 +580,12 @@ h1{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;color:var
           <td>28 taps, almost all from confused users. Engagement from the wrong affordance is not positive engagement.</td>
         </tr>
         <tr>
+          <td>Food photos recommended for Speedline</td>
+          <td>At the start of the engagement, Speedline had no food photography — a long undifferentiated list with no visual hierarchy. Flagged to the owner as a friction point. The manager subsequently added photos to most menu items. Outside the website, inside the ordering experience.</td>
+        </tr>
+        <tr>
           <td>Static menu page → redirected to Speedline</td>
-          <td>Post-redesign recordings showed rage and dead clicks concentrated on /menu. The static page remained an active dead end even after the homepage was fixed. Redirect completed March 5, 2026.</td>
+          <td>Session recordings showed users hitting dead ends across the static menu page: underlined headers that looked like links and did nothing, no path to ordering, no photos. The page absorbed traffic that had nowhere useful to go. Redirect completed March 5, 2026.</td>
         </tr>
       </tbody>
     </table>
@@ -536,6 +608,13 @@ h1{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;color:var
         <div class="shift-note">The closest available signal to an order being placed. Nearly 1 in 2 visits now.</div>
       </div>
       <div class="shift-card">
+        <div class="shift-before">57%</div>
+        <div class="shift-arrow">→</div>
+        <div class="shift-after">0%</div>
+        <div class="shift-label">CTA taps landing on a dead end</div>
+        <div class="shift-note">Before: more than half of all ordering button taps went nowhere. After: zero.</div>
+      </div>
+      <div class="shift-card">
         <div class="shift-before">11.3%</div>
         <div class="shift-arrow">→</div>
         <div class="shift-after">33.3%</div>
@@ -543,11 +622,11 @@ h1{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;color:var
         <div class="shift-note">Nearly 3× more taps going to the right place.</div>
       </div>
       <div class="shift-card">
-        <div class="shift-before">3 to 1</div>
+        <div class="shift-before">30.9%</div>
         <div class="shift-arrow">→</div>
-        <div class="shift-after">0.6 to 1</div>
-        <div class="shift-label">Menu taps vs. order button taps</div>
-        <div class="shift-note">Ratio flipped. Order button now wins.</div>
+        <div class="shift-after">19.7%</div>
+        <div class="shift-label">Mobile sessions opening the hamburger nav</div>
+        <div class="shift-note">Down 11 points. Fewer users hunting for an ordering path that is now visible above the fold.</div>
       </div>
       <div class="shift-card">
         <div class="shift-before">13.1%</div>
@@ -600,23 +679,27 @@ h1{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;color:var
       <tbody>
         <tr>
           <td>Menu redirect evaluation</td>
-          <td>30-day window open. Results pull scheduled April 5, 2026. Watching whether fewer users are hitting the old menu page and whether more visits are ending with a click to the ordering platform.</td>
+          <td>30-day window closes April 5, 2026. Watching whether fewer sessions hit the old menu path and whether more visits end with a click to the ordering platform.</td>
         </tr>
         <tr>
-          <td>CTA language comparison</td>
-          <td>Three button labels currently in use: "Start Order," "Order Now," and "Order." An unintentional three-way test. Will track which drives more clicks once the data window is clean.</td>
+          <td>Google Business Profile menu card fix</td>
+          <td>After April 5. The GBP menu card currently routes through a Google search results page before reaching the site. Fixing it to point directly to Speedline removes a second dead end outside the website.</td>
+        </tr>
+        <tr>
+          <td>CTA language test</td>
+          <td>After April 5. Three labels currently in use across the site: "Start Order," "Order Now," and "Order." Will standardize to one label across all five buttons, run for 3-4 weeks, then rotate. Looking for language that captures both browsing and ordering intent — the 1 in 5 visitors who navigate to the menu first suggest the current phrasing may read as more commitment than browse.</td>
+        </tr>
+        <tr>
+          <td>Remove "Menu" from hamburger overlay</td>
+          <td>After CTA label test. Once button language explicitly signals that browsing and ordering happen in the same place, the overlay menu link becomes redundant. Catering and Contact Us remain.</td>
         </tr>
         <tr>
           <td>Closing the tracking gap</td>
           <td>Inquiry sent to the ordering platform. If it can receive tags from the website, it becomes possible to see which visits led to actual orders. That is the most important number in this project.</td>
         </tr>
         <tr>
-          <td>Day and time patterns</td>
-          <td>Hypothesis: most orders happen Thursday through Saturday evening. Validating against session data to understand when the site needs to perform most.</td>
-        </tr>
-        <tr>
           <td>User testing, post-redesign</td>
-          <td>No moderated test of the current experience yet. Planned: test the full path from homepage through Speedline ordering to surface remaining friction at the handoff.</td>
+          <td>Planned: test the full path from homepage through Speedline ordering to surface remaining friction at the handoff.</td>
         </tr>
       </tbody>
     </table>
