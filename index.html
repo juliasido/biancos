@@ -434,8 +434,6 @@ h1{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;color:var
     <span class="section-anchor">Insight</span>
     <h2>Users weren't avoiding ordering. They wanted to see the food first.</h2>
 
-    <p>The homepage had two buttons side by side: OUR MENU and ORDER NOW. OUR MENU got nearly twice the taps: 19% of all site-wide clicks versus 10% for ORDER NOW. The mobile hamburger accounted for 27% of all taps. Open it, and the first option was the food menu. Two taps to the same dead end.</p>
-
     <div class="stat-row">
       <div class="stat-cell">
         <div class="stat-cell-label">Menu button taps</div>
@@ -459,16 +457,25 @@ h1{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;color:var
       </div>
     </div>
 
-    <p>Session recordings added the explanation. Users tapped OUR MENU, landed on a wall of text with no photos and no way to order, scrolled, got stuck, and went back. The menu headers were underlined. They looked like links but weren't. The phone number was static text. Contact info sat below a fold most sessions never reached.</p>
-
-    <div class="img-block">
-      <img src="legacy_static_menu.png" alt="Legacy static menu page" style="width:50%;display:block;margin:0 auto;">
-      <div class="img-cap"><strong>The static menu page.</strong> Underlined headers that look like links. Tapping them does nothing. No photos, no prices, no path to ordering. This is where most sessions ended.</div>
-    </div>
+    <p>The homepage had two buttons side by side: OUR MENU and ORDER NOW. OUR MENU got nearly twice the taps: 19% of all site-wide clicks versus 10% for ORDER NOW. The mobile hamburger accounted for 27% of all taps. Open it, and the first option was the food menu. Two taps to the same dead end.</p>
 
     <div class="img-block">
       <img src="legacy_cta_hotspot.png" alt="Legacy homepage CTAs with Clarity hotspot overlay" style="width:50%;display:block;margin:0 auto;">
-      <div class="img-cap"><strong>The two CTAs, legacy site.</strong> Equal visual weight, side by side. OUR MENU captured nearly twice the taps. The hotspot makes the split visible: users reached for the menu first, not the order button.</div>
+      <div class="img-cap"><strong>The two CTAs, legacy site.</strong> Equal visual weight, side by side. OUR MENU captured nearly twice the taps. Users reached for the menu first, not the order button.</div>
+    </div>
+
+    <div class="img-block">
+      <img src="legacy_static_menu.png" alt="Legacy static menu page" style="width:50%;display:block;margin:0 auto;">
+      <div class="img-cap"><strong>Where OUR MENU led.</strong> Underlined headers that look like links. Tapping them does nothing. No photos, no prices, no path to ordering. This is where most sessions ended.</div>
+    </div>
+
+    <p>The site had a systemic affordance problem: elements that signaled interactivity but delivered nothing. Menu headers were underlined like links but tapped to nowhere. The phone number looked like static text with no dialer behind it. The footer heading looked actionable but wasn't. Every false signal added friction the user couldn't diagnose.</p>
+
+    <div class="img-block">
+      <video controls style="width:100%;display:block" preload="metadata">
+        <source src="clarity_rageclicks_menu_legacy_mobile.mp4" type="video/mp4">
+      </video>
+      <div class="img-cap">A user trying to reach the restaurant taps the "Place an Order" heading in the footer, then the phone number below it. Neither responds. They keep trying.</div>
     </div>
 
     <p>The behavioral data showed two competing buttons and a menu path that led nowhere. The unmoderated user study added what the data couldn't: all three participants mentioned missing food photography without being prompted. Three strangers, one session each, same observation. When that happens it stops being an assumption. It's a finding.</p>
@@ -495,13 +502,6 @@ h1{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;color:var
           <div class="q-by">Wilson. Found no way to start ordering from within the food menu</div>
         </div>
       </div>
-    </div>
-
-    <div class="img-block" style="margin-top:24px">
-      <video controls style="width:100%;display:block" preload="metadata">
-        <source src="clarity_rageclicks_menu_legacy_mobile.mp4" type="video/mp4">
-      </video>
-      <div class="img-cap">A user who knew exactly what they wanted. They tapped the item repeatedly. It was a heading, not a link.</div>
     </div>
 
     <h3>The structural constraint</h3>
@@ -584,11 +584,9 @@ h1{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;color:var
           <td>OUR MENU got twice the taps of ORDER NOW. Eliminating the split removes the dead-end path. "Start Order" over "Order Now." The phrasing implies browsing is welcome, not that you must commit immediately.</td>
         </tr>
         <tr>
-          <td>Phone number → click-to-call</td>
-          <td>Clarity recordings confirmed users tapping static phone text expecting a native dialer. Nothing happened.</td>
+          <td>Affordance failures corrected across the site</td>
+          <td>Three elements signaled interactivity but weren't interactive: the menu headers (underlined, looked like links), the phone number (static text, no dialer behind it), and the chat widget (styled like a messaging tool, generated 28 taps almost all from confused users). Each was either fixed or removed. The phone number became click-to-call. The chat widget was removed. The menu redirect resolved the dead end the menu headers were pointing toward. Restoring correct affordance signals was as important as the CTA hierarchy change.</td>
         </tr>
-        <tr>
-          <td>Anonymous pizza grid → named, clickable specials</td>
           <td>All three study participants independently cited missing food photography. Named items give first-time visitors a visual anchor before clicking through.</td>
         </tr>
         <tr>
@@ -602,10 +600,6 @@ h1{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;color:var
         <tr>
           <td>Cookie banner removed</td>
           <td>No legal requirement for a US-only local audience. Removed friction and cleaned up data capture.</td>
-        </tr>
-        <tr>
-          <td>Chat-style bubble removed</td>
-          <td>28 taps, almost all from confused users. Engagement from the wrong affordance is not positive engagement.</td>
         </tr>
         <tr>
           <td>Food photos recommended for Speedline</td>
