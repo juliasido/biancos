@@ -45,7 +45,7 @@ body{font-family:'Libre Baskerville',serif;background:#F7F5F0 !important;color:#
 h1{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;color:var(--charcoal);line-height:1.1;margin-bottom:20px}
 
 /* ── Lede ── */
-.lede{font-family:'Lora',serif;font-size:20px;font-weight:400;font-style:italic;color:var(--charcoal-mid);line-height:1.7;max-width:640px;margin-bottom:32px}
+.lede{font-family:'Lora',serif;font-size:20px;font-weight:400;font-style:italic;color:var(--charcoal-mid);line-height:1.7;margin-bottom:32px}
 .lede strong{font-weight:600;color:var(--charcoal);font-style:normal}
 
 /* ── Meta row ── */
@@ -87,17 +87,17 @@ h1{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;color:var
 .body-section h2{font-family:'Lora',serif;font-size:clamp(19px,2.5vw,24px);font-weight:600;color:var(--charcoal);line-height:1.25;margin-bottom:20px}
 .body-section h3{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--charcoal);margin:36px 0 12px}
 .body-section h3:first-of-type{margin-top:0}
-.body-section p{font-family:'Libre Baskerville',serif;font-size:14px;line-height:1.85;color:var(--charcoal-mid);margin-bottom:16px;max-width:640px}
+.body-section p{font-family:'Libre Baskerville',serif;font-size:14px;line-height:1.85;color:var(--charcoal-mid);margin-bottom:16px}
 .body-section p:last-child{margin-bottom:0}
 .body-section p strong{color:var(--charcoal);font-weight:700}
 
 /* ── Pullquote ── */
-.pullquote{border-left:3px solid var(--teal);background:var(--teal-light);border-radius:0 4px 4px 0;padding:16px 22px;margin:24px 0;max-width:600px}
+.pullquote{border-left:3px solid var(--teal);background:var(--teal-light);border-radius:0 4px 4px 0;padding:16px 22px;margin:24px 0}
 .pullquote p{font-family:'Lora',serif;font-size:16px;font-style:italic;color:var(--charcoal);margin-bottom:8px}
 .pullquote .attribution{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mid-gray)}
 
 /* ── Note block ── */
-.note-block{background:var(--teal-light);border:1px solid var(--teal-mid);border-radius:6px;padding:16px 20px;margin:20px 0;font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.65;color:var(--charcoal-mid);max-width:640px}
+.note-block{background:var(--teal-light);border:1px solid var(--teal-mid);border-radius:6px;padding:16px 20px;margin:20px 0;font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.65;color:var(--charcoal-mid)}
 .note-block strong{color:var(--charcoal);font-weight:600}
 .note-label{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
 
@@ -118,20 +118,34 @@ h1{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;color:var
 .bn-number.neutral{color:var(--charcoal)}
 .bn-desc{font-family:'DM Sans',sans-serif;font-size:15px;color:var(--mid-gray);line-height:1.55}
 
-/* ── Flow paths ── */
-.flow-paths{display:flex;flex-direction:column;gap:12px;margin:24px 0}
-.flow-path{background:var(--white);border:1px solid var(--rule);border-radius:6px;padding:16px 18px}
-.flow-path-label{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
-.flow-path-label.optimal{color:var(--teal)}
-.flow-path-label.current{color:var(--charcoal)}
-.flow-path-label.legacy{color:#b84040}
-.flow-steps{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:15px;color:var(--charcoal-mid)}
-.flow-step{font-family:'DM Sans',sans-serif;background:var(--ivory);border:1px solid var(--rule);border-radius:3px;padding:3px 8px;font-size:15px}
-.flow-step.teal{background:var(--teal-light);border-color:var(--teal-mid);color:var(--teal)}
-.flow-step.red{background:#fce8e8;border-color:#f0b8b8;color:#b84040}
-.flow-step.gap{background:#fff8e1;border-color:#ffe082;color:#7a5000}
-.flow-arrow{color:var(--mid-gray);font-size:15px;font-family:'DM Sans',sans-serif}
-.flow-note{font-family:'DM Sans',sans-serif;font-size:11.5px;color:var(--mid-gray);margin-top:10px;font-style:italic}
+/* ── Flow diagram ── */
+.flow-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;margin:32px 0}
+.col-header{display:flex;align-items:flex-start;gap:8px;margin-bottom:28px;flex-wrap:wrap}
+.col-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.col-title{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;color:var(--charcoal);flex:1;min-width:0}
+.col-badge{font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:20px;white-space:nowrap;flex-shrink:0;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.badge-red{background:#fce8e8;color:#b84040}
+.badge-teal{background:var(--teal-light);color:var(--teal)}
+.fd-timeline{position:relative;padding-left:36px}
+.fd-timeline::before{content:'';position:absolute;left:11px;top:12px;bottom:12px;width:2px}
+.fd-timeline.red-line::before{background:#f0b8b8}
+.fd-timeline.teal-line::before{background:var(--teal)}
+.fd-row{position:relative;padding-bottom:28px}
+.fd-row:last-child{padding-bottom:0}
+.fd-icon{position:absolute;left:-36px;top:1px;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;border:2px solid;background:var(--white)}
+.fd-icon.icon-red{border-color:#f0b8b8;color:#b84040}
+.fd-icon.icon-teal{border-color:var(--teal);color:var(--teal)}
+.fd-icon.icon-exit{border-color:#b84040;background:#b84040;color:#fff;font-size:13px}
+.fd-title{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;line-height:1.35;padding-top:3px}
+.fd-title.title-dark{color:var(--charcoal)}
+.fd-title.title-teal{color:var(--teal)}
+.fd-title.title-red{color:#b84040}
+.fd-sub{font-family:'DM Sans',sans-serif;font-size:12px;color:var(--mid-gray);margin-top:2px}
+.fd-sub.sub-teal{color:var(--teal)}
+.fd-sub.sub-red{color:#b84040;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:11px}
+.fd-pain{margin-top:8px;background:#fce8e8;border:1px solid #f0b8b8;border-radius:6px;padding:9px 12px;font-family:'DM Sans',sans-serif;font-size:12px;color:#b84040;line-height:1.55}
+.fd-pain strong{font-weight:700}
+@media(max-width:600px){.flow-grid{grid-template-columns:1fr;gap:48px 0}}
 
 /* ── Before/after table ── */
 .ba-table,.r-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15px;border:1px solid var(--rule);border-radius:6px;overflow:hidden}
@@ -459,8 +473,6 @@ h1{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;color:var
 
     <p>The homepage had two buttons side by side: OUR MENU and ORDER NOW. OUR MENU got nearly twice the taps: 19% of all site-wide clicks versus 10% for ORDER NOW. The mobile hamburger accounted for 27% of all taps. Open it, and the first option was the food menu. Two taps to the same dead end.</p>
 
-    <p>Session recordings added the explanation. Users tapped OUR MENU, landed on a wall of text with no photos and no way to order, scrolled, got stuck, and went back.</p>
-      
     <div class="img-block">
       <img src="legacy_cta_hotspot.png" alt="Legacy homepage CTAs with Clarity hotspot overlay" style="width:50%;display:block;margin:0 auto;">
       <div class="img-cap"><strong>The two CTAs, legacy site.</strong> Equal visual weight, side by side. OUR MENU captured nearly twice the taps. Users reached for the menu first, not the order button.</div>
@@ -471,31 +483,95 @@ h1{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;color:var
       <div class="img-cap"><strong>Where OUR MENU led.</strong> Underlined headers that look like links. Tapping them does nothing. No photos, no prices, no path to ordering. This is where most sessions ended.</div>
     </div>
 
+    <!-- ── Flow diagram ── -->
+    <div class="img-block">
+    <div class="flow-grid" style="padding:24px 24px 8px;">
+
+      <!-- LEFT: Legacy -->
+      <div>
+        <div class="col-header">
+          <span class="col-dot" style="background:#c0392b;"></span>
+          <span class="col-title">Path 1: What most users did</span>
+          <span class="col-badge badge-red">Legacy flow</span>
+        </div>
+        <div class="fd-timeline red-line">
+          <div class="fd-row">
+            <div class="fd-icon icon-red"><img src="icons/icon-search.svg" width="16" height="16" alt=""></div>
+            <div class="fd-title title-dark">Google Search</div>
+            <div class="fd-sub">Intent: Quick lunch order</div>
+          </div>
+          <div class="fd-row">
+            <div class="fd-icon icon-red"><img src="icons/icon-home.svg" width="16" height="16" alt=""></div>
+            <div class="fd-title title-dark">Bianco's Homepage</div>
+            <div class="fd-pain"><strong>PAIN POINT:</strong> Two equal CTAs. Wrong path wins.</div>
+          </div>
+          <div class="fd-row">
+            <div class="fd-icon icon-red"><img src="icons/icon-menu.svg" width="16" height="16" alt=""></div>
+            <div class="fd-title title-dark">Taps "OUR MENU"</div>
+            <div class="fd-sub">54% of CTA taps went here</div>
+          </div>
+          <div class="fd-row">
+            <div class="fd-icon icon-red"><img src="icons/icon-deadend.svg" width="16" height="16" alt=""></div>
+            <div class="fd-title title-dark">Static Menu Page</div>
+            <div class="fd-pain"><strong>PAIN POINT:</strong> No photos, no prices, no path to ordering. Confirmed dead end.</div>
+          </div>
+          <div class="fd-row">
+            <div class="fd-icon icon-red"><img src="icons/icon-tap.svg" width="16" height="16" alt=""></div>
+            <div class="fd-title title-dark">Scrolling / Tapping dead links</div>
+            <div class="fd-pain"><strong>PAIN POINT:</strong> Underlined headers that look like links. Tapping them does nothing.</div>
+          </div>
+          <div class="fd-row">
+            <div class="fd-icon icon-exit"><img src="icons/icon-exit.svg" width="16" height="16" alt=""></div>
+            <div class="fd-title title-red">Exit</div>
+            <div class="fd-sub sub-red">Order lost</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Optimal -->
+      <div>
+        <div class="col-header">
+          <span class="col-dot" style="background:#2a9d8f;"></span>
+          <span class="col-title">Path 2: What the site intended</span>
+          <span class="col-badge badge-teal">Optimal path</span>
+        </div>
+        <div class="fd-timeline teal-line">
+          <div class="fd-row">
+            <div class="fd-icon icon-teal"><img src="icons/icon-search.svg" width="16" height="16" alt=""></div>
+            <div class="fd-title title-dark">Google Search</div>
+          </div>
+          <div class="fd-row">
+            <div class="fd-icon icon-teal"><img src="icons/icon-home.svg" width="16" height="16" alt=""></div>
+            <div class="fd-title title-dark">Bianco's Homepage</div>
+          </div>
+          <div class="fd-row">
+            <div class="fd-icon icon-teal"><img src="icons/icon-cart.svg" width="16" height="16" alt=""></div>
+            <div class="fd-title title-teal">Taps "ORDER NOW"</div>
+          </div>
+          <div class="fd-row">
+            <div class="fd-icon icon-teal"><img src="icons/icon-rocket.svg" width="16" height="16" alt=""></div>
+            <div class="fd-title title-teal">Speedline Ordering Page</div>
+          </div>
+          <div class="fd-row">
+            <div class="fd-icon icon-teal"><img src="icons/icon-check.svg" width="16" height="16" alt=""></div>
+            <div class="fd-title title-teal">Order Placed</div>
+            <div class="fd-sub sub-teal">Conversion success</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="img-cap"><strong>Two paths, one dead end.</strong> 54% of CTA taps went to a page with no way to order. The other 46% reached Speedline.</div>
+    </div>
+
     <p>The site had a systemic affordance problem: elements that signaled interactivity but delivered nothing. Menu headers were underlined like links but tapped to nowhere. The phone number looked like static text with no dialer behind it. The footer heading looked actionable but wasn't. Every false signal added friction the user couldn't diagnose.</p>
 
     <div class="img-block">
       <video controls style="width:100%;display:block" preload="metadata">
         <source src="clarity_rageclicks_menu_legacy_mobile.mp4" type="video/mp4">
       </video>
-      <div class="img-cap">A user trying to reach the restaurant taps the "Place an Order" heading in the footer and then the phone number below it, and neither responds.</div>
+      <div class="img-cap"><strong>Rage click, legacy site.</strong> A user trying to reach the restaurant taps the "Place an Order" heading in the footer and then the phone number below it, and neither responds.</div>
     </div>
-    
-    <p>The menu headers were underlined. They looked like links but weren't. </p>
-    
-    <div class="img-block">
-      <img src="legacy_static_menu.png" alt="Legacy static menu page" style="width:50%;display:block;margin:0 auto;">
-      <div class="img-cap"><strong>The static menu page.</strong> Underlined headers that look like links. Tapping them does nothing. No photos, no prices, no path to ordering. This is where most sessions ended.</div>
-    </div>
-    
-    <p> The phone number was static text. Contact info sat below a fold most sessions never reached.</p>
-
-<div class="img-block" style="margin-top:24px">
-      <video controls style="width:100%;display:block" preload="metadata">
-        <source src="clarity_rageclicks_menu_legacy_mobile.mp4" type="video/mp4">
-      </video>
-      <div class="img-cap">Captured in Clarity: a user rage-clicking a menu item that was a heading, not a link.</div>
-    </div>
-
 
     <p>The behavioral data showed two competing buttons and a menu path that led nowhere. The unmoderated user study added what the data couldn't: all three participants mentioned missing food photography without being prompted. Three strangers, one session each, same observation. When that happens it stops being an assumption. It's a finding.</p>
 
@@ -526,49 +602,6 @@ h1{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;color:var
     <h3>The structural constraint</h3>
     <p>One constraint shapes every measurement decision in this project: conversion happens on Speedline, a third-party platform. The moment a user leaves the Bianco's website, all tracking stops. Whether they placed an order is invisible. That meant the goal wasn't more traffic. It was less friction on the path to a platform we couldn't instrument.</p>
 
-    <div class="flow-paths">
-      <div class="flow-path">
-        <div class="flow-path-label optimal">Optimal, least friction</div>
-        <div class="flow-steps">
-          <span class="flow-step">Google search</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">Google Business "Order Online"</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step teal">Speedline</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step teal">Order placed</span>
-        </div>
-        <div class="flow-note">Website never enters the path. Currently being set up with the owner.</div>
-      </div>
-      <div class="flow-path">
-        <div class="flow-path-label current">Current, post-redesign</div>
-        <div class="flow-steps">
-          <span class="flow-step">Google search</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">biancoswalpole.com</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">Start Order (33% of taps)</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">Speedline</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step gap">Order? Invisible.</span>
-        </div>
-        <div class="flow-note">One extra step vs. optimal. Tracking ends the moment the user leaves the site.</div>
-      </div>
-      <div class="flow-path">
-        <div class="flow-path-label legacy">Legacy, most friction</div>
-        <div class="flow-steps">
-          <span class="flow-step">Google search</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">biancoswalpole.com</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step red">OUR MENU (19% of taps)</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step red">Dead end</span>
-        </div>
-        <div class="flow-note">Most taps went into the menu path. That path had no exit to ordering.</div>
-      </div>
-    </div>
 
     <p>The approach followed the user. 69% of hamburger-first sessions ended at the menu tap. Not because users were lost, but because they wanted to see what was on offer before committing. That is a reasonable, predictable behavior. The problem was where it led. Rather than redesigning the menu from scratch, the decision was to redirect that intent: anyone tapping Menu now lands on Speedline, which serves as both a browsable menu and an ordering system. Users who had been walking into a wall were picked up and placed directly into the flow they were looking for.</p>
 
@@ -606,6 +639,8 @@ h1{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;color:var
           <td>Affordance failures corrected across the site</td>
           <td>Three elements signaled interactivity but weren't interactive: the menu headers (underlined, looked like links), the phone number (static text, no dialer behind it), and the chat widget (styled like a messaging tool, generated 28 taps almost all from confused users). Each was either fixed or removed. The phone number became click-to-call. The chat widget was removed. The menu redirect resolved the dead end the menu headers were pointing toward. Restoring correct affordance signals was as important as the CTA hierarchy change.</td>
         </tr>
+        <tr>
+          <td>Anonymous pizza grid → named, clickable specials</td>
           <td>All three study participants independently cited missing food photography. Named items give first-time visitors a visual anchor before clicking through.</td>
         </tr>
         <tr>
