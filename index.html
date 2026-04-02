@@ -45,7 +45,7 @@ body{font-family:'Libre Baskerville',serif;background:#F7F5F0 !important;color:#
 h1{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;color:var(--charcoal);line-height:1.1;margin-bottom:20px}
 
 /* ── Lede ── */
-.lede{font-family:'Lora',serif;font-size:20px;font-weight:400;font-style:italic;color:var(--charcoal-mid);line-height:1.7;margin-bottom:32px}
+.lede{font-family:'Lora',serif;font-size:20px;font-weight:400;font-style:italic;color:var(--charcoal-mid);line-height:1.7;margin-bottom:32px;max-width:70%}
 .lede strong{font-weight:600;color:var(--charcoal);font-style:normal}
 
 /* ── Meta row ── */
@@ -87,7 +87,7 @@ h1{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;color:var
 .body-section h2{font-family:'Lora',serif;font-size:clamp(19px,2.5vw,24px);font-weight:600;color:var(--charcoal);line-height:1.25;margin-bottom:20px}
 .body-section h3{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--charcoal);margin:36px 0 12px}
 .body-section h3:first-of-type{margin-top:0}
-.body-section p{font-family:'Libre Baskerville',serif;font-size:14px;line-height:1.85;color:var(--charcoal-mid);margin-bottom:16px}
+.body-section p{font-family:'Libre Baskerville',serif;font-size:15px;line-height:1.85;color:var(--charcoal-mid);margin-bottom:16px;max-width:70%}
 .body-section p:last-child{margin-bottom:0}
 .body-section p strong{color:var(--charcoal);font-weight:700}
 
@@ -122,8 +122,8 @@ h1{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;color:var
 .flow-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;margin:32px 0}
 .col-header{display:flex;align-items:flex-start;gap:8px;margin-bottom:28px;flex-wrap:wrap}
 .col-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:4px}
-.col-title{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;color:var(--charcoal);flex:1;min-width:0}
-.col-badge{font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:20px;white-space:nowrap;flex-shrink:0;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.col-title{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;color:var(--charcoal);flex:1;min-width:0}
+.col-badge{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:20px;white-space:nowrap;flex-shrink:0;max-width:100%;overflow:hidden;text-overflow:ellipsis}
 .badge-red{background:#fce8e8;color:#b84040}
 .badge-teal{background:var(--teal-light);color:var(--teal)}
 .fd-timeline{position:relative;padding-left:36px}
@@ -132,18 +132,18 @@ h1{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;color:var
 .fd-timeline.teal-line::before{background:var(--teal)}
 .fd-row{position:relative;padding-bottom:28px}
 .fd-row:last-child{padding-bottom:0}
-.fd-icon{position:absolute;left:-36px;top:1px;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;border:2px solid;background:var(--white)}
-.fd-icon.icon-red{border-color:#f0b8b8;color:#b84040}
-.fd-icon.icon-teal{border-color:var(--teal);color:var(--teal)}
-.fd-icon.icon-exit{border-color:#b84040;background:#b84040;color:#fff;font-size:13px}
-.fd-title{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;line-height:1.35;padding-top:3px}
+.fd-icon{position:absolute;left:-36px;top:1px;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:transparent}
+.fd-icon.icon-red{color:#b84040}
+.fd-icon.icon-teal{color:var(--teal)}
+.fd-icon.icon-exit{background:#fff;color:#b84040}
+.fd-title{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;line-height:1.35;padding-top:3px}
 .fd-title.title-dark{color:var(--charcoal)}
 .fd-title.title-teal{color:var(--teal)}
 .fd-title.title-red{color:#b84040}
-.fd-sub{font-family:'DM Sans',sans-serif;font-size:12px;color:var(--mid-gray);margin-top:2px}
+.fd-sub{font-family:'DM Sans',sans-serif;font-size:15px;color:var(--mid-gray);margin-top:2px}
 .fd-sub.sub-teal{color:var(--teal)}
-.fd-sub.sub-red{color:#b84040;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:11px}
-.fd-pain{margin-top:8px;background:#fce8e8;border:1px solid #f0b8b8;border-radius:6px;padding:9px 12px;font-family:'DM Sans',sans-serif;font-size:12px;color:#b84040;line-height:1.55}
+.fd-sub.sub-red{color:#b84040;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:15px}
+.fd-pain{margin-top:8px;background:#fce8e8;border:1px solid #f0b8b8;border-radius:6px;padding:9px 12px;font-family:'DM Sans',sans-serif;font-size:15px;color:#b84040;line-height:1.55}
 .fd-pain strong{font-weight:700}
 @media(max-width:600px){.flow-grid{grid-template-columns:1fr;gap:48px 0}}
 
@@ -243,8 +243,8 @@ h1{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;color:var
   .body-section h3{font-size:15px}
 
   /* Lede and body copy */
-  .lede{font-size:18px}
-  .body-section p{font-size:16px;line-height:1.8}
+  .lede{font-size:18px;max-width:100%}
+  .body-section p{font-size:16px;line-height:1.8;max-width:100%}
 
   /* All uppercase tracking labels — 15px across the board */
   .section-anchor{font-size:15px}
@@ -496,32 +496,32 @@ h1{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;color:var
         </div>
         <div class="fd-timeline red-line">
           <div class="fd-row">
-            <div class="fd-icon icon-red"><img src="icons/icon-search.svg" width="16" height="16" alt=""></div>
+            <div class="fd-icon icon-red"><img src="icons/icon-search.svg" width="20" height="20" alt=""></div>
             <div class="fd-title title-dark">Google Search</div>
             <div class="fd-sub">Intent: Quick lunch order</div>
           </div>
           <div class="fd-row">
-            <div class="fd-icon icon-red"><img src="icons/icon-home.svg" width="16" height="16" alt=""></div>
+            <div class="fd-icon icon-red"><img src="icons/icon-home.svg" width="20" height="20" alt=""></div>
             <div class="fd-title title-dark">Bianco's Homepage</div>
             <div class="fd-pain"><strong>PAIN POINT:</strong> Two equal CTAs. Wrong path wins.</div>
           </div>
           <div class="fd-row">
-            <div class="fd-icon icon-red"><img src="icons/icon-menu.svg" width="16" height="16" alt=""></div>
+            <div class="fd-icon icon-red"><img src="icons/icon-menu.svg" width="20" height="20" alt=""></div>
             <div class="fd-title title-dark">Taps "OUR MENU"</div>
             <div class="fd-sub">54% of CTA taps went here</div>
           </div>
           <div class="fd-row">
-            <div class="fd-icon icon-red"><img src="icons/icon-deadend.svg" width="16" height="16" alt=""></div>
+            <div class="fd-icon icon-red"><img src="icons/icon-deadend.svg" width="20" height="20" alt=""></div>
             <div class="fd-title title-dark">Static Menu Page</div>
             <div class="fd-pain"><strong>PAIN POINT:</strong> No photos, no prices, no path to ordering. Confirmed dead end.</div>
           </div>
           <div class="fd-row">
-            <div class="fd-icon icon-red"><img src="icons/icon-tap.svg" width="16" height="16" alt=""></div>
+            <div class="fd-icon icon-red"><img src="icons/icon-tap.svg" width="20" height="20" alt=""></div>
             <div class="fd-title title-dark">Scrolling / Tapping dead links</div>
             <div class="fd-pain"><strong>PAIN POINT:</strong> Underlined headers that look like links. Tapping them does nothing.</div>
           </div>
           <div class="fd-row">
-            <div class="fd-icon icon-exit"><img src="icons/icon-exit.svg" width="16" height="16" alt=""></div>
+            <div class="fd-icon icon-exit"><img src="icons/icon-exit.svg" width="20" height="20" alt=""></div>
             <div class="fd-title title-red">Exit</div>
             <div class="fd-sub sub-red">Order lost</div>
           </div>
@@ -537,23 +537,23 @@ h1{font-family:'DM Serif Display',serif;font-size:48px;font-weight:400;color:var
         </div>
         <div class="fd-timeline teal-line">
           <div class="fd-row">
-            <div class="fd-icon icon-teal"><img src="icons/icon-search.svg" width="16" height="16" alt=""></div>
+            <div class="fd-icon icon-teal"><img src="icons/icon-search.svg" width="20" height="20" alt=""></div>
             <div class="fd-title title-dark">Google Search</div>
           </div>
           <div class="fd-row">
-            <div class="fd-icon icon-teal"><img src="icons/icon-home.svg" width="16" height="16" alt=""></div>
+            <div class="fd-icon icon-teal"><img src="icons/icon-home.svg" width="20" height="20" alt=""></div>
             <div class="fd-title title-dark">Bianco's Homepage</div>
           </div>
           <div class="fd-row">
-            <div class="fd-icon icon-teal"><img src="icons/icon-cart.svg" width="16" height="16" alt=""></div>
+            <div class="fd-icon icon-teal"><img src="icons/icon-cart.svg" width="20" height="20" alt=""></div>
             <div class="fd-title title-teal">Taps "ORDER NOW"</div>
           </div>
           <div class="fd-row">
-            <div class="fd-icon icon-teal"><img src="icons/icon-rocket.svg" width="16" height="16" alt=""></div>
+            <div class="fd-icon icon-teal"><img src="icons/icon-rocket.svg" width="20" height="20" alt=""></div>
             <div class="fd-title title-teal">Speedline Ordering Page</div>
           </div>
           <div class="fd-row">
-            <div class="fd-icon icon-teal"><img src="icons/icon-check.svg" width="16" height="16" alt=""></div>
+            <div class="fd-icon icon-teal"><img src="icons/icon-check.svg" width="20" height="20" alt=""></div>
             <div class="fd-title title-teal">Order Placed</div>
             <div class="fd-sub sub-teal">Conversion success</div>
           </div>
